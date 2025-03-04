@@ -10,13 +10,10 @@ Public Class WinFormExampleForm
         SecondTextBox.Text = ""
         FirstTextBox.Text = ""
         UpperRadioButton.Checked = True
-    End Sub
-    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
-        Me.Close()
+        LastFirstRadioButton.Checked = True
     End Sub
 
-    Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
-        'Me.Text = StrReverse(Me.Text)
+    Sub SetCase()
         If UpperRadioButton.Checked Then
             Me.Text = UCase(ThirdTextBox.Text & " " & SecondTextBox.Text)
         ElseIf UpperRadioButton.Checked = False Then
@@ -24,6 +21,25 @@ Public Class WinFormExampleForm
         Else
             MsgBox($"Oh No! Nothing Selected!")
         End If
+    End Sub
+
+    Sub SetFormat()
+        If LastFirstRadioButton.Checked Then
+            Me.Text = SecondTextBox.Text & " " & ThirdTextBox.Text
+        ElseIf FirstLastRadioButton.Checked Then
+            Me.Text = $"{ThirdTextBox.Text},{SecondTextBox.Text}"
+        Else
+            MsgBox($"Oh No! Nothing Selected!")
+        End If
+    End Sub
+    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+        Me.Close()
+    End Sub
+
+    Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
+        'Me.Text = StrReverse(Me.Text)
+        SetFormat()
+        SetCase()
     End Sub
 
     Private Sub ChangeButton_Click(sender As Object, e As EventArgs) Handles ChangeButton.Click

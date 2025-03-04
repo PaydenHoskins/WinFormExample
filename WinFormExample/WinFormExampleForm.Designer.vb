@@ -33,6 +33,12 @@ Partial Class WinFormExampleForm
         Me.Label2 = New System.Windows.Forms.Label()
         Me.UpperRadioButton = New System.Windows.Forms.RadioButton()
         Me.LowerRadioButton = New System.Windows.Forms.RadioButton()
+        Me.FirstLastRadioButton = New System.Windows.Forms.RadioButton()
+        Me.LastFirstRadioButton = New System.Windows.Forms.RadioButton()
+        Me.CaseGroupBox = New System.Windows.Forms.GroupBox()
+        Me.FormatGroupBox = New System.Windows.Forms.GroupBox()
+        Me.CaseGroupBox.SuspendLayout()
+        Me.FormatGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
         'UpdateButton
@@ -115,7 +121,7 @@ Partial Class WinFormExampleForm
         'UpperRadioButton
         '
         Me.UpperRadioButton.AutoSize = True
-        Me.UpperRadioButton.Location = New System.Drawing.Point(335, 230)
+        Me.UpperRadioButton.Location = New System.Drawing.Point(6, 19)
         Me.UpperRadioButton.Name = "UpperRadioButton"
         Me.UpperRadioButton.Size = New System.Drawing.Size(81, 17)
         Me.UpperRadioButton.TabIndex = 8
@@ -126,7 +132,7 @@ Partial Class WinFormExampleForm
         'LowerRadioButton
         '
         Me.LowerRadioButton.AutoSize = True
-        Me.LowerRadioButton.Location = New System.Drawing.Point(335, 252)
+        Me.LowerRadioButton.Location = New System.Drawing.Point(6, 41)
         Me.LowerRadioButton.Name = "LowerRadioButton"
         Me.LowerRadioButton.Size = New System.Drawing.Size(81, 17)
         Me.LowerRadioButton.TabIndex = 9
@@ -134,13 +140,57 @@ Partial Class WinFormExampleForm
         Me.LowerRadioButton.Text = "Lower Case"
         Me.LowerRadioButton.UseVisualStyleBackColor = True
         '
+        'FirstLastRadioButton
+        '
+        Me.FirstLastRadioButton.AutoSize = True
+        Me.FirstLastRadioButton.Location = New System.Drawing.Point(6, 24)
+        Me.FirstLastRadioButton.Name = "FirstLastRadioButton"
+        Me.FirstLastRadioButton.Size = New System.Drawing.Size(64, 17)
+        Me.FirstLastRadioButton.TabIndex = 10
+        Me.FirstLastRadioButton.TabStop = True
+        Me.FirstLastRadioButton.Text = "FirstLast"
+        Me.FirstLastRadioButton.UseVisualStyleBackColor = True
+        '
+        'LastFirstRadioButton
+        '
+        Me.LastFirstRadioButton.AutoSize = True
+        Me.LastFirstRadioButton.Location = New System.Drawing.Point(6, 46)
+        Me.LastFirstRadioButton.Name = "LastFirstRadioButton"
+        Me.LastFirstRadioButton.Size = New System.Drawing.Size(64, 17)
+        Me.LastFirstRadioButton.TabIndex = 11
+        Me.LastFirstRadioButton.TabStop = True
+        Me.LastFirstRadioButton.Text = "LastFirst"
+        Me.LastFirstRadioButton.UseVisualStyleBackColor = True
+        '
+        'CaseGroupBox
+        '
+        Me.CaseGroupBox.Controls.Add(Me.UpperRadioButton)
+        Me.CaseGroupBox.Controls.Add(Me.LowerRadioButton)
+        Me.CaseGroupBox.Location = New System.Drawing.Point(335, 229)
+        Me.CaseGroupBox.Name = "CaseGroupBox"
+        Me.CaseGroupBox.Size = New System.Drawing.Size(93, 67)
+        Me.CaseGroupBox.TabIndex = 12
+        Me.CaseGroupBox.TabStop = False
+        Me.CaseGroupBox.Text = "Case"
+        '
+        'FormatGroupBox
+        '
+        Me.FormatGroupBox.Controls.Add(Me.FirstLastRadioButton)
+        Me.FormatGroupBox.Controls.Add(Me.LastFirstRadioButton)
+        Me.FormatGroupBox.Location = New System.Drawing.Point(434, 229)
+        Me.FormatGroupBox.Name = "FormatGroupBox"
+        Me.FormatGroupBox.Size = New System.Drawing.Size(76, 67)
+        Me.FormatGroupBox.TabIndex = 13
+        Me.FormatGroupBox.TabStop = False
+        Me.FormatGroupBox.Text = "Format"
+        '
         'WinFormExampleForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.LowerRadioButton)
-        Me.Controls.Add(Me.UpperRadioButton)
+        Me.Controls.Add(Me.FormatGroupBox)
+        Me.Controls.Add(Me.CaseGroupBox)
         Me.Controls.Add(Me.ThirdTextBox)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.SecondTextBox)
@@ -152,6 +202,10 @@ Partial Class WinFormExampleForm
         Me.Controls.Add(Me.UpdateButton)
         Me.Name = "WinFormExampleForm"
         Me.Text = "WinFormExample"
+        Me.CaseGroupBox.ResumeLayout(False)
+        Me.CaseGroupBox.PerformLayout()
+        Me.FormatGroupBox.ResumeLayout(False)
+        Me.FormatGroupBox.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -168,4 +222,8 @@ Partial Class WinFormExampleForm
     Friend WithEvents Label2 As Label
     Friend WithEvents UpperRadioButton As RadioButton
     Friend WithEvents LowerRadioButton As RadioButton
+    Friend WithEvents FirstLastRadioButton As RadioButton
+    Friend WithEvents LastFirstRadioButton As RadioButton
+    Friend WithEvents CaseGroupBox As GroupBox
+    Friend WithEvents FormatGroupBox As GroupBox
 End Class
