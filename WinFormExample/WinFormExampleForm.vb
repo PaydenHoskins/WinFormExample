@@ -15,9 +15,11 @@ Public Class WinFormExampleForm
 
     Sub SetCase()
         If UpperRadioButton.Checked Then
-            Me.Text = UCase(ThirdTextBox.Text & " " & SecondTextBox.Text)
-        ElseIf UpperRadioButton.Checked = False Then
-            Me.Text = LCase(ThirdTextBox.Text & " " & SecondTextBox.Text)
+            ThirdTextBox.Text = UCase(ThirdTextBox.Text)
+            SecondTextBox.Text = UCase(SecondTextBox.Text)
+        ElseIf LowerRadioButton.Checked Then
+            ThirdTextBox.Text = LCase(ThirdTextBox.Text)
+            SecondTextBox.Text = LCase(SecondTextBox.Text)
         Else
             MsgBox($"Oh No! Nothing Selected!")
         End If
@@ -38,8 +40,9 @@ Public Class WinFormExampleForm
 
     Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
         'Me.Text = StrReverse(Me.Text)
-        SetFormat()
         SetCase()
+        SetFormat()
+        SetDefaults()
     End Sub
 
     Private Sub ChangeButton_Click(sender As Object, e As EventArgs) Handles ChangeButton.Click
