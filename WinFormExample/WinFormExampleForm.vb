@@ -5,10 +5,11 @@ Option Explicit On
 
 Public Class WinFormExampleForm
     'Code Goes Here
-    Sub Clear()
-        ThirdTextBox.Text = " "
-        SecondTextBox.Text = " "
-        FirstTextBox.Text = " "
+    Sub SetDefaults()
+        ThirdTextBox.Text = ""
+        SecondTextBox.Text = ""
+        FirstTextBox.Text = ""
+        UpperRadioButton.Checked = True
     End Sub
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
@@ -20,8 +21,11 @@ Public Class WinFormExampleForm
 
     Private Sub ChangeButton_Click(sender As Object, e As EventArgs) Handles ChangeButton.Click
         Me.Text = ThirdTextBox.Text & " " & SecondTextBox.Text
-        Clear()
+        SetDefaults()
     End Sub
 
+    Private Sub WinFormExampleForm_Load(sender As Object, e As EventArgs) Handles Me.Load
+        SetDefaults()
+    End Sub
 
 End Class
