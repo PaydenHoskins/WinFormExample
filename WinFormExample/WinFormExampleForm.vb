@@ -48,24 +48,22 @@ Public Class WinFormExampleForm
     Function UserIputIsValid() As Boolean
         Dim Valid As Boolean = True
         Dim message As String
-        If ThirdTextBox.Text = "" Then
+        If IsNumeric(AgeTextBox.Text) = False Then
             Valid = False
-            ThirdTextBox.Focus()
-            message &= "Please enter a valid first name." & vbNewLine
+            AgeTextBox.Focus()
+            message &= "Please enter a valid age." & vbNewLine
         End If
-
         If SecondTextBox.Text = "" Then
             Valid = False
             SecondTextBox.Focus()
             message &= "Please enter a valid lase name." & vbNewLine
         End If
 
-        If IsNumeric(AgeTextBox.Text) = False Then
+        If ThirdTextBox.Text = "" Then
             Valid = False
-            AgeTextBox.Focus()
-            Message &= "Please enter a valid age." & vbNewLine
+            ThirdTextBox.Focus()
+            message &= "Please enter a valid first name." & vbNewLine
         End If
-
         If Not Valid Then
             MsgBox(message, MsgBoxStyle.Exclamation, "User Input Fail!!!!")
         End If
