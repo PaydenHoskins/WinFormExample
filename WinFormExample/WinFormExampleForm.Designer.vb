@@ -26,7 +26,7 @@ Partial Class WinFormExampleForm
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.ChangeButton = New System.Windows.Forms.Button()
         Me.ThirdLabel = New System.Windows.Forms.Label()
-        Me.FirstTextBox = New System.Windows.Forms.TextBox()
+        Me.AgeTextBox = New System.Windows.Forms.TextBox()
         Me.SecondTextBox = New System.Windows.Forms.TextBox()
         Me.SecondLabel = New System.Windows.Forms.Label()
         Me.ThirdTextBox = New System.Windows.Forms.TextBox()
@@ -82,12 +82,12 @@ Partial Class WinFormExampleForm
         Me.ThirdLabel.TabIndex = 3
         Me.ThirdLabel.Text = "Age"
         '
-        'FirstTextBox
+        'AgeTextBox
         '
-        Me.FirstTextBox.Location = New System.Drawing.Point(335, 168)
-        Me.FirstTextBox.Name = "FirstTextBox"
-        Me.FirstTextBox.Size = New System.Drawing.Size(149, 20)
-        Me.FirstTextBox.TabIndex = 2
+        Me.AgeTextBox.Location = New System.Drawing.Point(335, 168)
+        Me.AgeTextBox.Name = "AgeTextBox"
+        Me.AgeTextBox.Size = New System.Drawing.Size(149, 20)
+        Me.AgeTextBox.TabIndex = 2
         '
         'SecondTextBox
         '
@@ -231,7 +231,7 @@ Partial Class WinFormExampleForm
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.SecondTextBox)
         Me.Controls.Add(Me.SecondLabel)
-        Me.Controls.Add(Me.FirstTextBox)
+        Me.Controls.Add(Me.AgeTextBox)
         Me.Controls.Add(Me.ThirdLabel)
         Me.Controls.Add(Me.ChangeButton)
         Me.Controls.Add(Me.ExitButton)
@@ -251,7 +251,7 @@ Partial Class WinFormExampleForm
     Friend WithEvents ExitButton As Button
     Friend WithEvents ChangeButton As Button
     Friend WithEvents ThirdLabel As Label
-    Friend WithEvents FirstTextBox As TextBox
+    Friend WithEvents AgeTextBox As TextBox
     Friend WithEvents SecondTextBox As TextBox
     Friend WithEvents SecondLabel As Label
     Friend WithEvents ThirdTextBox As TextBox

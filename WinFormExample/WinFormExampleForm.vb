@@ -8,9 +8,13 @@ Public Class WinFormExampleForm
     Sub SetDefaults()
         ThirdTextBox.Text = ""
         SecondTextBox.Text = ""
-        FirstTextBox.Text = ""
+        AgeTextBox.Text = ""
         UpperRadioButton.Checked = True
-        LastFirstRadioButton.Checked = True
+        FirstLastRadioButton.Checked = True
+        ReverseCheckBox.Checked = False
+        WhiteSpaceCheckBox.Checked = False
+        RandomCheckBox.Checked = False
+        AgeTextBox.Focus()
     End Sub
 
     Sub SetCase()
@@ -27,22 +31,65 @@ Public Class WinFormExampleForm
 
     Sub SetFormat()
         If LastFirstRadioButton.Checked Then
-            Me.Text = SecondTextBox.Text & " " & ThirdTextBox.Text
+            Me.Text = $"{SecondTextBox.Text},{ThirdTextBox.Text}"
         ElseIf FirstLastRadioButton.Checked Then
-            Me.Text = $"{ThirdTextBox.Text},{SecondTextBox.Text}"
+            Me.Text = ThirdTextBox.Text & " " & SecondTextBox.Text
         Else
             MsgBox($"Oh No! Nothing Selected!")
         End If
     End Sub
+
+    Sub ReverseString()
+        If ReverseCheckBox.Checked Then
+            Me.Text = StrReverse(Me.Text)
+        End If
+    End Sub
+
+    Function UserIputIsValid() As Boolean
+        Dim Valid As Boolean = True
+        Dim message As String
+        If ThirdTextBox.Text = "" Then
+            Valid = False
+            ThirdTextBox.Focus()
+            message &= "Please enter a valid first name." & vbNewLine
+        End If
+
+        If SecondTextBox.Text = "" Then
+            Valid = False
+            SecondTextBox.Focus()
+            message &= "Please enter a valid lase name." & vbNewLine
+        End If
+
+        If IsNumeric(AgeTextBox.Text) = False Then
+            Valid = False
+            AgeTextBox.Focus()
+            Message &= "Please enter a valid age." & vbNewLine
+        End If
+
+        If Not Valid Then
+            MsgBox(message, MsgBoxStyle.Exclamation, "User Input Fail!!!!")
+        End If
+        Return Valid
+    End Function
+    'Event Handlers ******************************************************************
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
     End Sub
 
+    Sub RemoveWhiteSpace()
+        If WhiteSpaceCheckBox.Checked Then
+            Me.Text = Replace(Me.Text, " ", "")
+        End If
+    End Sub
+
     Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
-        'Me.Text = StrReverse(Me.Text)
-        SetCase()
-        SetFormat()
-        SetDefaults()
+        If UserIputIsValid() Then
+            SetCase()
+            SetFormat()
+            RemoveWhiteSpace()
+            ReverseString()
+            SetDefaults()
+        End If
     End Sub
 
     Private Sub ChangeButton_Click(sender As Object, e As EventArgs) Handles ChangeButton.Click
