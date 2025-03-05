@@ -37,6 +37,9 @@ Partial Class WinFormExampleForm
         Me.LastFirstRadioButton = New System.Windows.Forms.RadioButton()
         Me.CaseGroupBox = New System.Windows.Forms.GroupBox()
         Me.FormatGroupBox = New System.Windows.Forms.GroupBox()
+        Me.ReverseCheckBox = New System.Windows.Forms.CheckBox()
+        Me.WhiteSpaceCheckBox = New System.Windows.Forms.CheckBox()
+        Me.RandomCheckBox = New System.Windows.Forms.CheckBox()
         Me.CaseGroupBox.SuspendLayout()
         Me.FormatGroupBox.SuspendLayout()
         Me.SuspendLayout()
@@ -73,7 +76,7 @@ Partial Class WinFormExampleForm
         'ThirdLabel
         '
         Me.ThirdLabel.AutoSize = True
-        Me.ThirdLabel.Location = New System.Drawing.Point(332, 187)
+        Me.ThirdLabel.Location = New System.Drawing.Point(301, 171)
         Me.ThirdLabel.Name = "ThirdLabel"
         Me.ThirdLabel.Size = New System.Drawing.Size(26, 13)
         Me.ThirdLabel.TabIndex = 3
@@ -81,14 +84,14 @@ Partial Class WinFormExampleForm
         '
         'FirstTextBox
         '
-        Me.FirstTextBox.Location = New System.Drawing.Point(335, 203)
+        Me.FirstTextBox.Location = New System.Drawing.Point(335, 168)
         Me.FirstTextBox.Name = "FirstTextBox"
         Me.FirstTextBox.Size = New System.Drawing.Size(149, 20)
         Me.FirstTextBox.TabIndex = 2
         '
         'SecondTextBox
         '
-        Me.SecondTextBox.Location = New System.Drawing.Point(335, 164)
+        Me.SecondTextBox.Location = New System.Drawing.Point(335, 147)
         Me.SecondTextBox.Name = "SecondTextBox"
         Me.SecondTextBox.Size = New System.Drawing.Size(149, 20)
         Me.SecondTextBox.TabIndex = 1
@@ -96,7 +99,7 @@ Partial Class WinFormExampleForm
         'SecondLabel
         '
         Me.SecondLabel.AutoSize = True
-        Me.SecondLabel.Location = New System.Drawing.Point(332, 148)
+        Me.SecondLabel.Location = New System.Drawing.Point(272, 150)
         Me.SecondLabel.Name = "SecondLabel"
         Me.SecondLabel.Size = New System.Drawing.Size(55, 13)
         Me.SecondLabel.TabIndex = 5
@@ -112,7 +115,7 @@ Partial Class WinFormExampleForm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(332, 109)
+        Me.Label2.Location = New System.Drawing.Point(272, 128)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(57, 13)
         Me.Label2.TabIndex = 7
@@ -184,11 +187,44 @@ Partial Class WinFormExampleForm
         Me.FormatGroupBox.TabStop = False
         Me.FormatGroupBox.Text = "Format"
         '
+        'ReverseCheckBox
+        '
+        Me.ReverseCheckBox.AutoSize = True
+        Me.ReverseCheckBox.Location = New System.Drawing.Point(335, 302)
+        Me.ReverseCheckBox.Name = "ReverseCheckBox"
+        Me.ReverseCheckBox.Size = New System.Drawing.Size(66, 17)
+        Me.ReverseCheckBox.TabIndex = 14
+        Me.ReverseCheckBox.Text = "Reverse"
+        Me.ReverseCheckBox.UseVisualStyleBackColor = True
+        '
+        'WhiteSpaceCheckBox
+        '
+        Me.WhiteSpaceCheckBox.AutoSize = True
+        Me.WhiteSpaceCheckBox.Location = New System.Drawing.Point(335, 326)
+        Me.WhiteSpaceCheckBox.Name = "WhiteSpaceCheckBox"
+        Me.WhiteSpaceCheckBox.Size = New System.Drawing.Size(88, 17)
+        Me.WhiteSpaceCheckBox.TabIndex = 15
+        Me.WhiteSpaceCheckBox.Text = "White Space"
+        Me.WhiteSpaceCheckBox.UseVisualStyleBackColor = True
+        '
+        'RandomCheckBox
+        '
+        Me.RandomCheckBox.AutoSize = True
+        Me.RandomCheckBox.Location = New System.Drawing.Point(335, 350)
+        Me.RandomCheckBox.Name = "RandomCheckBox"
+        Me.RandomCheckBox.Size = New System.Drawing.Size(66, 17)
+        Me.RandomCheckBox.TabIndex = 16
+        Me.RandomCheckBox.Text = "Random"
+        Me.RandomCheckBox.UseVisualStyleBackColor = True
+        '
         'WinFormExampleForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.RandomCheckBox)
+        Me.Controls.Add(Me.WhiteSpaceCheckBox)
+        Me.Controls.Add(Me.ReverseCheckBox)
         Me.Controls.Add(Me.FormatGroupBox)
         Me.Controls.Add(Me.CaseGroupBox)
         Me.Controls.Add(Me.ThirdTextBox)
@@ -226,4 +262,7 @@ Partial Class WinFormExampleForm
     Friend WithEvents LastFirstRadioButton As RadioButton
     Friend WithEvents CaseGroupBox As GroupBox
     Friend WithEvents FormatGroupBox As GroupBox
+    Friend WithEvents ReverseCheckBox As CheckBox
+    Friend WithEvents WhiteSpaceCheckBox As CheckBox
+    Friend WithEvents RandomCheckBox As CheckBox
 End Class

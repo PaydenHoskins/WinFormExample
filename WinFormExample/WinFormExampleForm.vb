@@ -53,5 +53,4 @@ Public Class WinFormExampleForm
     Private Sub WinFormExampleForm_Load(sender As Object, e As EventArgs) Handles Me.Load
         SetDefaults()
     End Sub
-
 End Class
