@@ -17,6 +17,41 @@ Public Class WinFormExampleForm
         AgeTextBox.Focus()
     End Sub
 
+    Function Random(Max As Integer, min As Integer) As Integer
+        Dim Placement As Single
+        Randomize()
+        Placement = Rnd()
+        Placement *= Max + min
+        Placement += min
+        Return CInt(Placement)
+    End Function
+
+    Function Track(CurrentNumber As Integer) As Boolean()
+        'Tracks the drawn Cards
+        Static DrawnCard(100) As Boolean
+        DrawnCard(CurrentNumber) = True
+        Return DrawnCard
+    End Function
+    Sub Scrable()
+        Dim DiscardPile() As Boolean = Track(0)
+        Dim Temp As String = ThirdTextBox.Text
+        Dim Spot As Integer
+        Console.WriteLine($"The third letter is: {Temp(2)}")
+
+        Do
+            For i = 0 To Len(Temp)
+                Spot = Random(Len(Temp), 0)
+                Track(CInt(Spot))
+                i = Spot
+                Spot = i
+            Next
+        Loop Until DiscardPile(CInt(Spot)) = False
+        Console.WriteLine($"{Temp(Spot)}")
+        'For i = 0 To Len(Temp) - 1
+        '    Console.WriteLine($"The {i + 1} letter is: {Temp(i)}")
+        'Next
+    End Sub
+
     Sub SetCase()
         If UpperRadioButton.Checked Then
             ThirdTextBox.Text = UCase(ThirdTextBox.Text)
@@ -82,6 +117,7 @@ Public Class WinFormExampleForm
 
     Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
         If UserIputIsValid() Then
+            Scrable()
             SetCase()
             SetFormat()
             RemoveWhiteSpace()
@@ -99,3 +135,6 @@ Public Class WinFormExampleForm
         SetDefaults()
     End Sub
 End Class
+'tool tips
+'accept and cancel button
+'bad tab order
