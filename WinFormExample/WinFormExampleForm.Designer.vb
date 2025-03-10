@@ -40,6 +40,7 @@ Partial Class WinFormExampleForm
         Me.ReverseCheckBox = New System.Windows.Forms.CheckBox()
         Me.WhiteSpaceCheckBox = New System.Windows.Forms.CheckBox()
         Me.RandomCheckBox = New System.Windows.Forms.CheckBox()
+        Me.DataListBox = New System.Windows.Forms.ListBox()
         Me.CaseGroupBox.SuspendLayout()
         Me.FormatGroupBox.SuspendLayout()
         Me.SuspendLayout()
@@ -76,7 +77,7 @@ Partial Class WinFormExampleForm
         'ThirdLabel
         '
         Me.ThirdLabel.AutoSize = True
-        Me.ThirdLabel.Location = New System.Drawing.Point(301, 171)
+        Me.ThirdLabel.Location = New System.Drawing.Point(227, 117)
         Me.ThirdLabel.Name = "ThirdLabel"
         Me.ThirdLabel.Size = New System.Drawing.Size(26, 13)
         Me.ThirdLabel.TabIndex = 3
@@ -84,14 +85,14 @@ Partial Class WinFormExampleForm
         '
         'AgeTextBox
         '
-        Me.AgeTextBox.Location = New System.Drawing.Point(335, 168)
+        Me.AgeTextBox.Location = New System.Drawing.Point(261, 114)
         Me.AgeTextBox.Name = "AgeTextBox"
         Me.AgeTextBox.Size = New System.Drawing.Size(149, 20)
         Me.AgeTextBox.TabIndex = 2
         '
         'SecondTextBox
         '
-        Me.SecondTextBox.Location = New System.Drawing.Point(335, 147)
+        Me.SecondTextBox.Location = New System.Drawing.Point(261, 93)
         Me.SecondTextBox.Name = "SecondTextBox"
         Me.SecondTextBox.Size = New System.Drawing.Size(149, 20)
         Me.SecondTextBox.TabIndex = 1
@@ -99,7 +100,7 @@ Partial Class WinFormExampleForm
         'SecondLabel
         '
         Me.SecondLabel.AutoSize = True
-        Me.SecondLabel.Location = New System.Drawing.Point(272, 150)
+        Me.SecondLabel.Location = New System.Drawing.Point(198, 96)
         Me.SecondLabel.Name = "SecondLabel"
         Me.SecondLabel.Size = New System.Drawing.Size(55, 13)
         Me.SecondLabel.TabIndex = 5
@@ -107,7 +108,7 @@ Partial Class WinFormExampleForm
         '
         'ThirdTextBox
         '
-        Me.ThirdTextBox.Location = New System.Drawing.Point(335, 125)
+        Me.ThirdTextBox.Location = New System.Drawing.Point(261, 71)
         Me.ThirdTextBox.Name = "ThirdTextBox"
         Me.ThirdTextBox.Size = New System.Drawing.Size(149, 20)
         Me.ThirdTextBox.TabIndex = 0
@@ -115,7 +116,7 @@ Partial Class WinFormExampleForm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(272, 128)
+        Me.Label2.Location = New System.Drawing.Point(198, 74)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(57, 13)
         Me.Label2.TabIndex = 7
@@ -169,7 +170,7 @@ Partial Class WinFormExampleForm
         '
         Me.CaseGroupBox.Controls.Add(Me.UpperRadioButton)
         Me.CaseGroupBox.Controls.Add(Me.LowerRadioButton)
-        Me.CaseGroupBox.Location = New System.Drawing.Point(335, 229)
+        Me.CaseGroupBox.Location = New System.Drawing.Point(261, 175)
         Me.CaseGroupBox.Name = "CaseGroupBox"
         Me.CaseGroupBox.Size = New System.Drawing.Size(93, 67)
         Me.CaseGroupBox.TabIndex = 12
@@ -180,7 +181,7 @@ Partial Class WinFormExampleForm
         '
         Me.FormatGroupBox.Controls.Add(Me.FirstLastRadioButton)
         Me.FormatGroupBox.Controls.Add(Me.LastFirstRadioButton)
-        Me.FormatGroupBox.Location = New System.Drawing.Point(434, 229)
+        Me.FormatGroupBox.Location = New System.Drawing.Point(360, 175)
         Me.FormatGroupBox.Name = "FormatGroupBox"
         Me.FormatGroupBox.Size = New System.Drawing.Size(76, 67)
         Me.FormatGroupBox.TabIndex = 13
@@ -190,7 +191,7 @@ Partial Class WinFormExampleForm
         'ReverseCheckBox
         '
         Me.ReverseCheckBox.AutoSize = True
-        Me.ReverseCheckBox.Location = New System.Drawing.Point(335, 302)
+        Me.ReverseCheckBox.Location = New System.Drawing.Point(261, 248)
         Me.ReverseCheckBox.Name = "ReverseCheckBox"
         Me.ReverseCheckBox.Size = New System.Drawing.Size(66, 17)
         Me.ReverseCheckBox.TabIndex = 14
@@ -200,7 +201,7 @@ Partial Class WinFormExampleForm
         'WhiteSpaceCheckBox
         '
         Me.WhiteSpaceCheckBox.AutoSize = True
-        Me.WhiteSpaceCheckBox.Location = New System.Drawing.Point(335, 326)
+        Me.WhiteSpaceCheckBox.Location = New System.Drawing.Point(261, 272)
         Me.WhiteSpaceCheckBox.Name = "WhiteSpaceCheckBox"
         Me.WhiteSpaceCheckBox.Size = New System.Drawing.Size(88, 17)
         Me.WhiteSpaceCheckBox.TabIndex = 15
@@ -210,18 +211,27 @@ Partial Class WinFormExampleForm
         'RandomCheckBox
         '
         Me.RandomCheckBox.AutoSize = True
-        Me.RandomCheckBox.Location = New System.Drawing.Point(335, 350)
+        Me.RandomCheckBox.Location = New System.Drawing.Point(261, 296)
         Me.RandomCheckBox.Name = "RandomCheckBox"
         Me.RandomCheckBox.Size = New System.Drawing.Size(66, 17)
         Me.RandomCheckBox.TabIndex = 16
         Me.RandomCheckBox.Text = "Random"
         Me.RandomCheckBox.UseVisualStyleBackColor = True
         '
+        'DataListBox
+        '
+        Me.DataListBox.FormattingEnabled = True
+        Me.DataListBox.Location = New System.Drawing.Point(501, 68)
+        Me.DataListBox.Name = "DataListBox"
+        Me.DataListBox.Size = New System.Drawing.Size(271, 225)
+        Me.DataListBox.TabIndex = 17
+        '
         'WinFormExampleForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.DataListBox)
         Me.Controls.Add(Me.RandomCheckBox)
         Me.Controls.Add(Me.WhiteSpaceCheckBox)
         Me.Controls.Add(Me.ReverseCheckBox)
@@ -265,4 +275,5 @@ Partial Class WinFormExampleForm
     Friend WithEvents ReverseCheckBox As CheckBox
     Friend WithEvents WhiteSpaceCheckBox As CheckBox
     Friend WithEvents RandomCheckBox As CheckBox
+    Friend WithEvents DataListBox As ListBox
 End Class
