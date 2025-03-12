@@ -16,7 +16,9 @@ Public Class WinFormExampleForm
         RandomCheckBox.Checked = False
         AgeTextBox.Focus()
     End Sub
-
+    Sub addToList(thisString As String)
+        DataListBox.Items.Add(thisString)
+    End Sub
     Function Random(Max As Integer, min As Integer) As Integer
         Dim Placement As Single
         Randomize()
@@ -26,31 +28,41 @@ Public Class WinFormExampleForm
         Return CInt(Placement)
     End Function
 
-    Function Track(CurrentNumber As Integer) As Boolean()
-        'Tracks the drawn Cards
-        Static DrawnCard(100) As Boolean
-        DrawnCard(CurrentNumber) = True
-        Return DrawnCard
-    End Function
-    Sub Scrable()
-        Dim DiscardPile() As Boolean = Track(0)
-        Dim Temp As String = ThirdTextBox.Text
-        Dim Spot As Integer
-        Console.WriteLine($"The third letter is: {Temp(2)}")
+    Function Scramble(ThisString As String) As String
+        Dim temp As String = ""
+        Dim position As Integer
+        Dim letters(Len(ThisString) - 1) As String
+        Dim count As Integer = 0
 
-        Do
-            For i = 0 To Len(Temp)
-                Spot = Random(Len(Temp), 0)
-                Track(CInt(Spot))
-                i = Spot
-                Spot = i
+        If RandomCheckBox.Checked Then
+
+            For i = 0 To UBound(letters)
+                letters(i) = ThisString(i)
             Next
-        Loop Until DiscardPile(CInt(Spot)) = False
-        Console.WriteLine($"{Temp(Spot)}")
-        'For i = 0 To Len(Temp) - 1
-        '    Console.WriteLine($"The {i + 1} letter is: {Temp(i)}")
-        'Next
-    End Sub
+
+            Do
+                position = RandomNumberInRange(UBound(letters))
+                If letters(position) <> "" Then
+                    temp &= letters(position)
+                    letters(position) = ""
+                    count = count + 1
+                End If
+            Loop Until count >= Len(ThisString)
+        Else
+            temp = ThisString
+        End If
+
+        Return temp
+    End Function
+
+    Function RandomNumberInRange(Optional max% = 10%, Optional min% = 0%) As Integer
+        Dim _max% = max - min
+        If _max < 0 Then
+            Throw New System.ArgumentException("Maximum number must be greater than minimum number")
+        End If
+        Randomize(DateTime.Now.Millisecond)
+        Return CInt(System.Math.Floor(Rnd() * (_max + 1))) + min
+    End Function
 
     Sub SetCase()
         If UpperRadioButton.Checked Then
@@ -121,6 +133,7 @@ Public Class WinFormExampleForm
             SetCase()
             SetFormat()
             RemoveWhiteSpace()
+            addToList(Me.Text)
             ReverseString()
             SetDefaults()
         End If
