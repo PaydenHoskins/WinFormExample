@@ -15,6 +15,7 @@ Public Class WinFormExampleForm
         WhiteSpaceCheckBox.Checked = False
         RandomCheckBox.Checked = False
         AgeTextBox.Focus()
+        Datalistboxselectedindex()
     End Sub
     Sub addToList(thisString As String)
         DataListBox.Items.Add(thisString)
@@ -125,7 +126,13 @@ Public Class WinFormExampleForm
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
     End Sub
-
+    Private Sub Datalistboxselectedindex()
+        If DataListBox.SelectedIndex = -1 Then
+            RemoveButton.Enabled = False
+        Else
+            RemoveButton.Enabled = True
+        End If
+    End Sub
     Sub RemoveWhiteSpace()
         If WhiteSpaceCheckBox.Checked Then
             Me.Text = Replace(Me.Text, " ", "")
