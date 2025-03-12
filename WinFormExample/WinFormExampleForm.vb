@@ -19,6 +19,7 @@ Public Class WinFormExampleForm
     End Sub
     Sub addToList(thisString As String)
         DataListBox.Items.Add(thisString)
+        NameComboBox.Items.Add(thisString)
     End Sub
     Function Random(Max As Integer, min As Integer) As Integer
         Dim Placement As Single

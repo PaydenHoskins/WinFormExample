@@ -42,7 +42,7 @@ Partial Class WinFormExampleForm
         Me.RandomCheckBox = New System.Windows.Forms.CheckBox()
         Me.DataListBox = New System.Windows.Forms.ListBox()
         Me.RemoveButton = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.NameComboBox = New System.Windows.Forms.ComboBox()
         Me.CaseGroupBox.SuspendLayout()
         Me.FormatGroupBox.SuspendLayout()
         Me.SuspendLayout()
@@ -237,20 +237,20 @@ Partial Class WinFormExampleForm
         Me.RemoveButton.Text = "Remove"
         Me.RemoveButton.UseVisualStyleBackColor = True
         '
-        'ComboBox1
+        'NameComboBox
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(501, 25)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(271, 21)
-        Me.ComboBox1.TabIndex = 19
+        Me.NameComboBox.FormattingEnabled = True
+        Me.NameComboBox.Location = New System.Drawing.Point(501, 25)
+        Me.NameComboBox.Name = "NameComboBox"
+        Me.NameComboBox.Size = New System.Drawing.Size(271, 21)
+        Me.NameComboBox.TabIndex = 19
         '
         'WinFormExampleForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.NameComboBox)
         Me.Controls.Add(Me.RemoveButton)
         Me.Controls.Add(Me.DataListBox)
         Me.Controls.Add(Me.RandomCheckBox)
@@ -298,5 +298,5 @@ Partial Class WinFormExampleForm
     Friend WithEvents RandomCheckBox As CheckBox
     Friend WithEvents DataListBox As ListBox
     Friend WithEvents RemoveButton As Button
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents NameComboBox As ComboBox
 End Class
