@@ -129,7 +129,8 @@ Public Class WinFormExampleForm
 
     Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
         If UserIputIsValid() Then
-            Scrable()
+            ThirdTextBox.Text = Scramble(ThirdTextBox.Text)
+            SecondTextBox.Text = Scramble(SecondTextBox.Text)
             SetCase()
             SetFormat()
             RemoveWhiteSpace()
