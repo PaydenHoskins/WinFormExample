@@ -116,6 +116,11 @@ Public Class WinFormExampleForm
         End If
         Return Valid
     End Function
+
+    Private Sub Remove(Sender As Object, e As EventArgs) Handles RemoveButton.Click
+        'Datalistbox.selectedindex returns a number forr the index
+        DataListBox.Items.RemoveAt(DataListBox.SelectedIndex)
+    End Sub
     'Event Handlers ******************************************************************
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
@@ -137,6 +142,7 @@ Public Class WinFormExampleForm
             addToList(Me.Text)
             ReverseString()
             SetDefaults()
+
         End If
     End Sub
 
