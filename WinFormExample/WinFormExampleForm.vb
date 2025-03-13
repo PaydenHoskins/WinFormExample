@@ -15,7 +15,7 @@ Public Class WinFormExampleForm
         WhiteSpaceCheckBox.Checked = False
         RandomCheckBox.Checked = False
         AgeTextBox.Focus()
-        Datalistboxselectedindex()
+        displayLabel.Text = ""
     End Sub
     Sub addToList(thisString As String)
         DataListBox.Items.Add(thisString)
@@ -127,7 +127,8 @@ Public Class WinFormExampleForm
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
     End Sub
-    Private Sub Datalistboxselectedindex()
+    Private Sub Datalistboxselectedindex(Sender As Object, e As EventArgs) Handles DataListBox.SelectedIndexChanged
+        displayLabel.Text = DataListBox.SelectedItem.ToString
         If DataListBox.SelectedIndex = -1 Then
             RemoveButton.Enabled = False
         Else
@@ -147,7 +148,8 @@ Public Class WinFormExampleForm
             SetCase()
             SetFormat()
             RemoveWhiteSpace()
-            addToList(Me.Text)
+            'addToList(Me.Text)
+            addToList(ThirdTextBox.Text.PadRight(10) & SecondTextBox.Text.PadRight(10) & AgeTextBox.Text.PadLeft(3))
             ReverseString()
             SetDefaults()
 
